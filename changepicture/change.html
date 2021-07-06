@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>图片切换</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+		<img class="food" :src="url" title="图片来自网络，若侵权请联系作者删除"/>
+		<a class="Left" href="#" @click="leftclick()" v-show="index!=0">
+			<img class="left" src="./images/arrow-left-bold.png">
+		</a>
+		<a class="Right" href="#" @click="rightclick()" v-if="index<9">
+			<img class="right" src="./images/arrow-right.png">
+		</a>
+		
+	</div>
+
+    <script>
+      var vm = new Vue({
+		el:"#container",
+		data:{
+			index:0,
+			url:"./images/0.jpg"
+		},
+		methods:{
+			imagearr:function(){
+				this.url="./images/"+this.index+".jpg"
+			},
+			// 向左按钮按下，索引减1，将url更新为前一张图
+			leftclick:function(){
+				this.index--;
+				this.imagearr();
+			},
+			// 向右按钮按下，索引加1，将url更新为后一张图
+			rightclick:function(){
+				this.index++;
+				this.imagearr()
+			}
+		}
+	});
+    </script>
+  </body>
+</html>

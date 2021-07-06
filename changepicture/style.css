@@ -1,0 +1,53 @@
+/* 元素水平垂直居中方法之一:
+left:50%;	与左边缘距离为页面的50%
+top:50%;	与顶部边缘距离为页面的50%
+坐标系原点向左方和上方分别移动50%元素的宽度和高度
++为有或下,-为左或上
+transform: translate(-50%, -50%); */
+#container{
+	width: 30%;
+	height: 40%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	/* 设置元素的相对于自身的偏移度为负50%(也就是元素自身尺寸的一半)*/
+	transform: translate(-50%, -50%); 
+	border: 1px solid #000 ;
+}
+.food{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+.left{
+	position: absolute;
+	width: 40px;
+	height: 60px;
+	top: 50%;
+	transform: translate(0, -50%);
+	z-index: 999;
+}
+.left:hover{
+	background-color: #ccc;
+	opacity: 0.5;
+}
+.right{
+	position: absolute;
+	width: 40px;
+	height: 60px;
+	top: 50%;
+	transform: translate(-100%, -50%);
+	z-index: 999;
+}
+.right:hover{
+	background-color: #ccc;
+	opacity: 0.5;
+}
+/* 父容器左浮动或右浮动,确定容器位置 */
+.Left{
+	float: left;
+}
+.Right{
+	float: right;
+}
