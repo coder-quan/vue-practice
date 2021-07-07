@@ -35,26 +35,26 @@
 				url:"./images/0.jpg"
 			},
 			methods:{
-				imagearr:function(){
+				imagearr(){
 					this.url="./images/"+this.index+".jpg"
 				},
 				// 向左按钮按下，索引减1，将url更新为前一张图
-				leftclick:function(){
+				leftclick(){
 					this.index--
 					this.imagearr()
 				},
 				// 向右按钮按下，索引加1，将url更新为后一张图
-				rightclick:function(){
+				rightclick(){
 					this.index++
 					this.imagearr()
 				},
 				// 根据按下的按钮更新图片
-				change:function(pointIndex){
+				change(pointIndex){
 					this.index=pointIndex-1
 					this.imagearr()
 				},
 				// 更新图片，加载到最后一张图时跳转到第一张，实现循环播放
-				autochange:function(){
+				autochange(){
 					if(this.index<9)
 					this.index++
 					else if(this.index===9)
@@ -63,7 +63,7 @@
 				}
 			},
 			// 将vue的dom挂载到实例的dom后执行轮播
-			mounted:function(){
+			mounted(){
 				setInterval(()=>{this.autochange()},3000)
 			}
 		});
