@@ -109,8 +109,8 @@ const vm=new Vue({
 			computed:{
 				sumPrice(){
 					let sum=0;
-					for(let i=0;i<this.books.length;i++){
-						sum+=this.books[i].price*this.books[i].count
+					for(let item of this.books){
+						sum+=item.price*item.count
 					}
 					return sum
 				}
