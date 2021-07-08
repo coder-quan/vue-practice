@@ -1,0 +1,19 @@
+table{
+	border-collapse: collapse;
+	width: 900px;
+	text-align: center;
+	/* 固定表头,防止因表格内容的原因产生抖动 */
+ 	table-layout: fixed;
+	/* 允许长单词换行到下一行 */
+	word-wrap: break-word;
+}
+th, td{
+	border: 1px solid lightgray;
+	padding: 10px;
+}
+th {
+	background-color: #e9e9e9;
+}
+th:nth-child(2){
+	width: 35%;
+}

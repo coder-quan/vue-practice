@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>数据表</title>
+	<link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+    	<table>
+				 <!-- 表头内容 -->
+    		<thead>
+    			<tr>
+    				<th></th>
+    				<th>书籍名称</th>
+    				<th>出版日期</th>
+    				<th>价格</th>
+    				<th>数量</th>
+    				<th>操作</th>
+    			</tr>
+    		</thead>
+				<!-- 表格内容 -->
+    		<tbody>
+    			<tr v-for="(item,index) in books" :key="item.name">
+    				<td>{{item.id}}</td>
+    				<td>{{item.name}}</td>
+    				<td>{{item.time}}</td>
+    				<td>{{item.price|translate}}</td>
+    				<td>
+    					<button @click="subtract(index)" :disabled="item.count<1">-</button>
+    					{{item.count}}
+    					<button @click="add(index)">+</button>
+    				</td>
+    				<td><button @click="removeBook(index)">删除</button></td>
+    			</tr>
+					<tr>
+						<td colspan="5">合计：</td>
+						<td>{{sumPrice|translate}}</td>
+					</tr>
+    		</tbody>
+    	</table>
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+	<script src="main.js"></script>
+  </body>
+</html>
