@@ -86,8 +86,7 @@ const vm=new Vue({
 						price:149.8,
 						count:1
 					}
-				],
-				page:1
+				]
 			},
 			methods:{
 				 subtract(index){
