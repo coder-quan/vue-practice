@@ -47,7 +47,7 @@ const vm=new Vue({
 					{
 						id:7,
 						name:'JavaScript DOM编程艺术（第二版）',
-						time:'2020-12-01',
+						time:'2011-04-01',
 						price:69.00,
 						count:1
 					},
